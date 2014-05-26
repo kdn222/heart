@@ -1,0 +1,33 @@
+<body>
+  <canvas id="myCanvas" width="800" height="600"></canvas>
+  <script>
+    var canvas = document.getElementById('myCanvas');
+    var context = canvas.getContext('2d');
+
+      context.beginPath();
+      context.fillStyle = 'red';
+      context.fillRect(0, 0, 400, 400);
+      context.closePath();
+
+      context.beginPath();
+      context.fillStyle = 'blue';
+      context.fillRect(190, 140, 20, 20);
+      context.fillRect(150, 120, 40, 20);
+      context.fillRect(210, 120, 40, 20);
+      context.fillRect(130, 140, 20, 40);
+      context.fillRect(250, 140, 20, 40);
+      context.fillRect(230, 180, 20, 20);
+      context.fillRect(150, 180, 20, 20);
+      context.fillRect(170, 200, 20, 20);
+      context.fillRect(210, 200, 20, 20);
+      context.fillRect(190, 220, 20, 20);
+      context.closePath();
+
+      context.beginPath();
+      context.font='bold 50px Arial';
+      context.fillStyle = 'white';
+      context.fillText("Rails Girls",80, 320);
+      context.closePath();
+
+  </script>
+</body>

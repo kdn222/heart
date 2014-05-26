@@ -1,0 +1,42 @@
+<body>
+
+<form>
+Points: 0<input type="range" id="size" min="1" max="50">50
+</form>
+<canvas id="myCanvas" width="800" height="600"></canvas>
+
+<script type="text/javascript">
+var input = document.getElementById('size');
+input.onchange = function(){
+  console.log(input.value);
+    var canvas = document.getElementById('myCanvas');
+    var context = canvas.getContext('2d');
+    var size = input.value;
+
+      context.beginPath();
+      context.fillStyle = 'red';
+      context.fillRect(0, 0, 400, 400);
+      context.closePath();
+
+      context.beginPath();
+      context.fillStyle = 'blue';
+      context.fillRect(3*size, size, size, size);
+      context.fillRect(size, 0, 2*size, size);
+      context.fillRect(4*size, 0, 2*size, size);
+      context.fillRect(0, size, size, 2*size);
+      context.fillRect(6*size, size, size, 2*size);
+      context.fillRect(5*size, 3*size, size, size);
+      context.fillRect(size, 3*size, size, size);
+      context.fillRect(2*size, 4*size, size, size);
+      context.fillRect(4*size, 4*size, size, size);
+      context.fillRect(3*size, 5*size, size, size);
+      context.closePath();
+
+      context.beginPath();
+      context.font='bold 50px Arial';
+      context.fillStyle = 'white';
+      context.fillText("Rails Girls",80, 320);
+      context.closePath();
+};
+  </script>
+</body>

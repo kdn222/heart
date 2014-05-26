@@ -1,0 +1,60 @@
+<body>
+
+<form>
+Points: 0<input type="range" id="size" min="1" max="50">50
+x: 0<input type="range" id="x" min="1" max="200">200
+y: 0<input type="range" id="y" min="1" max="200">200
+</form>
+<canvas id="myCanvas" width="800" height="600"></canvas>
+
+<script type="text/javascript">
+var size = document.getElementById('size');
+var x = document.getElementById('x');
+var y = document.getElementById('y');
+
+size.onchange=function(){
+  draw(size.value, x.value, y.value)
+};
+
+x.onchange=function(){
+  draw(size.value, x.value, y.value)
+};
+
+y.onchange=function(){
+  draw(size.value, x.value, y.value);
+};
+var draw = function(size, x, y){
+    size = parseInt(size, 10);
+    x = parseInt(x, 10);
+    y = parseInt(y, 10);
+    var canvas = document.getElementById('myCanvas');
+    var context = canvas.getContext('2d');
+
+      context.beginPath();
+      context.fillStyle = 'red';
+      context.fillRect(0, 0, 800, 600);
+      context.closePath();
+
+      context.beginPath();
+      context.fillStyle = 'blue';
+      context.fillRect(x+3*size, y+size, size, size);
+      context.fillRect(x+size, y+0, 2*size, size);
+      context.fillRect(x+4*size, y+0, 2*size, size);
+      context.fillRect(x+0, y+size, size, 2*size);
+      context.fillRect(x+6*size, y+size, size, 2*size);
+      context.fillRect(x+5*size, y+3*size, size, size);
+      context.fillRect(x+size, y+3*size, size, size);
+      context.fillRect(x+2*size, y+4*size, size, size);
+      context.fillRect(x+4*size, y+4*size, size, size);
+      context.fillRect(x+3*size, y+5*size, size, size);
+      context.closePath();
+
+      context.beginPath();
+      context.font='bold 50px Arial';
+      context.fillStyle = 'white';
+      context.fillText("Rails Girls",80, 320);
+      context.closePath();
+};
+draw(size.value, x.value, y.value);
+  </script>
+</body>
